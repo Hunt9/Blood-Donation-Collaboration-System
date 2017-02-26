@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Blood Donation Collaboration System</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="Blood">
+        <item>Select Blood Group</item>
+        <item>A Positive</item>
+        <item>B Positive</item>
+        <item>O Positive</item>
+        <item>A Negative</item>
+        <item>B Negative</item>
+        <item>O Negative</item>
+
+
+    </string-array>
+
+    <string name="auth_failed">Failed</string>
+    <string name="title_activity_feeds">Feeds</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
