@@ -13,4 +13,9 @@
     tools:context="gd.rf.gamov.blooddonationcollaborationsystem.Feeds"
     tools:showIn="@layout/app_bar_feeds">
 
+    <FrameLayout
+        android:id="@+id/MainFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </RelativeLayout>

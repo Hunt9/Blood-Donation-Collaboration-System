@@ -22,4 +22,5 @@
         app:headerLayout="@layout/nav_header_feeds"
         app:menu="@menu/activity_feeds_drawer" />
 
+
 </android.support.v4.widget.DrawerLayout>

@@ -1,6 +1,7 @@
 package gd.rf.gamov.blooddonationcollaborationsystem;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -26,6 +27,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import static android.R.attr.fragment;
 import static android.R.attr.password;
 import static com.google.android.gms.internal.zzs.TAG;
 
@@ -42,6 +44,12 @@ public class SignUp extends Fragment {
     private EditText myPassword;
     private Spinner myBloodGroup;
     private Button signup;
+
+    private String fname;
+    private String lname;
+    private String email;
+    private String pass;
+    private String bgroup;
 
 
     private FirebaseDatabase mFirebaseDatabase;
@@ -112,29 +120,41 @@ public class SignUp extends Fragment {
             @Override
             public void onClick(View v) {
 
+                fname = myFirstName.getText().toString();
+                lname = myLastName.getText().toString();
+                email = myEmail.getText().toString();
+                pass = myPassword.getText().toString();
+                bgroup = myBloodGroup.getSelectedItem().toString();
 
-                mAuth.createUserWithEmailAndPassword(myEmail.getText().toString(),myPassword.getText().toString())
+                mAuth.createUserWithEmailAndPassword(email,pass)
                         .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                                userz = new Users(myFirstName.getText().toString(),myLastName.getText().toString(),myEmail.getText().toString(),myPassword.getText().toString(),myBloodGroup.getSelectedItem().toString());
+                                userz = new Users(fname,lname,email,bgroup);
                                 mUsersDatabaseRefrence.push().setValue(userz);
 
-                                Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getActivity(), Feeds.class);
+                                intent.putExtra("Name", mAuth.getCurrentUser().getDisplayName().toString());
+                                startActivity(intent);
+
+
 
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
                                 if (!task.isSuccessful()) {
 
-                                    Toast.makeText(getContext(), "LO", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getActivity(), "hahahahaha", Toast.LENGTH_SHORT).show();
+
                                 }
 
 
                             }
                         });
+
+
                 myFirstName.setText("");
                 myLastName.setText("");
                 myEmail.setText("");
@@ -148,6 +168,7 @@ public class SignUp extends Fragment {
 
     return view;
     }
+
 
 
 

@@ -12,9 +12,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class Feeds extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private TextView Name;
+    private View navHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,8 @@ public class Feeds extends AppCompatActivity
         setContentView(R.layout.activity_feeds);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +46,13 @@ public class Feeds extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        navHeader = navigationView.getHeaderView(0);
+        Name = (TextView)navHeader.findViewById(R.id.Namezzz);
+
+        Name.setText(getIntent().getStringExtra("Name"));
+
+      // getSupportFragmentManager().beginTransaction().add(R.id.Mainfe,new NewFeeds()).commit();
     }
 
     @Override
@@ -81,16 +94,21 @@ public class Feeds extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            getSupportFragmentManager().beginTransaction().add(R.id.MainFrame,new NewFeeds()).commit();
         } else if (id == R.id.nav_gallery) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.MainFrame,new MyRequests()).commit();
 
         } else if (id == R.id.nav_slideshow) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.MainFrame,new PostRequirements()).commit();
 
         } else if (id == R.id.nav_manage) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.MainFrame,new Settings()).commit();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_notification) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.MainFrame,new Notifications()).commit();
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_manage) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.MainFrame,new Settings()).commit();
 
         }
 

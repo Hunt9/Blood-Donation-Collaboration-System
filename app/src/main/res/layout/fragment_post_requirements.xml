@@ -1,0 +1,138 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="gd.rf.gamov.blooddonationcollaborationsystem.PostRequirements">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Blood Group : "/>
+        <Spinner
+            android:id="@+id/BGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/Blood"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Number Of Units Required : "/>
+        <EditText
+            android:id="@+id/Units"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Urgency : "/>
+        <Spinner
+            android:id="@+id/Urgency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/Urgency"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Country : "/>
+        <Spinner
+            android:id="@+id/Country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/Country"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="State : "/>
+        <Spinner
+            android:id="@+id/State"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/State"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="City : "/>
+        <Spinner
+            android:id="@+id/City"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/City"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hospital : "/>
+        <Spinner
+            android:id="@+id/Hospitals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/Hospitals"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Relation with Patient : "/>
+        <Spinner
+            android:id="@+id/Relation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/Relations"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact Number :"/>
+        <EditText
+            android:id="@+id/Contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Additional Instructions"/>
+        <EditText
+            android:id="@+id/Ainfo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            />
+        <Button
+            android:id="@+id/Post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post"
+            android:layout_gravity="center_horizontal"/>
+
+
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

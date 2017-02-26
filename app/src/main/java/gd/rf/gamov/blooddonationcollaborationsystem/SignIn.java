@@ -63,9 +63,11 @@ public class SignIn extends Fragment {
                     FirebaseUser user = firebaseAuth.getCurrentUser();
                     if (user != null) {
                         // User is signed in
+                        Toast.makeText(getActivity(), user.getDisplayName(), Toast.LENGTH_SHORT).show();
                         Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     } else {
                         // User is signed out
+                        Toast.makeText(getActivity(), "yararar", Toast.LENGTH_SHORT).show();
                         Log.d(TAG, "onAuthStateChanged:signed_out");
                     }
                 }
@@ -117,7 +119,7 @@ public class SignIn extends Fragment {
         // ...
     }
 
-    public void getLogin(String emails,String pass)
+    public void getLogin(final String emails, String pass)
     {
 
         myEmail.setText("");
@@ -129,8 +131,9 @@ public class SignIn extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
 
-                        Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Success"+ mAuth.getCurrentUser().getDisplayName(), Toast.LENGTH_SHORT).show();
 
+                        gotoact(emails);
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
@@ -143,6 +146,14 @@ public class SignIn extends Fragment {
                     }
                 });
 
+
+    }
+
+    private void gotoact(String s) {
+
+        Intent intent = new Intent(getActivity(),Feeds.class);
+        intent.putExtra("Name", s);
+        startActivity(intent);
 
     }
 

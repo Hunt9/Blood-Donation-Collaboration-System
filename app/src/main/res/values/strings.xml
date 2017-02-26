@@ -12,8 +12,6 @@
         <item>A Negative</item>
         <item>B Negative</item>
         <item>O Negative</item>
-
-
     </string-array>
 
     <string name="auth_failed">Failed</string>
@@ -23,4 +21,74 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string-array name="Urgency">
+        <item>Urgent</item>
+        <item>Within 5 hours</item>
+        <item>Within 12 hours</item>
+        <item>Within 24 hours</item>
+        <item>Within 2 days</item>
+        <item>Within Week</item>
+
+
+    </string-array>
+
+    <string-array name="Country">
+        <item>Pakistan</item>
+        <item>India</item>
+        <item>Bangladesh</item>
+        <item>Srilanka</item>
+        <item>China</item>
+        <item>Australia</item>
+
+    </string-array>
+
+    <string-array name="State">
+        <item>Sindh</item>
+        <item>Punjab</item>
+        <item>Bolochistan</item>
+        <item>Khyber Pakhtoon Kha</item>
+    </string-array>
+
+
+    <string-array name="City">
+        <item>Karachi</item>
+        <item>Lahore</item>
+        <item>Islamabad</item>
+        <item>Peshawer</item>
+        <item>Quetta</item>
+
+    </string-array>
+
+    <string-array name="Hospitals">
+        <item>Indus Hospital</item>
+        <item>Ziauddin Hospital</item>
+        <item>Agha Khan Hospital</item>
+        <item>Liaquat National Hospital</item>
+        <item>OMI</item>
+        <item>Jinnah Hospital</item>
+        <item>Holy Family Hospital</item>
+
+
+
+    </string-array>
+
+
+    <string-array name="Relations">
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Son</item>
+        <item>Daughter</item>
+        <item>Aunt</item>
+        <item>Uncle</item>
+        <item>Nephew</item>
+        <item>Niece</item>
+    <item> Neighbour</item>
+<item>Friend</item>
+    <item>Neighbour</item>
+    <item>None</item>
+
+    </string-array>
+
+
 </resources>

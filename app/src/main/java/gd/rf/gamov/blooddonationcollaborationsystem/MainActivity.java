@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.Sign,new SignIn()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.Sign,new SignIn()).commit();
 
     }
 }

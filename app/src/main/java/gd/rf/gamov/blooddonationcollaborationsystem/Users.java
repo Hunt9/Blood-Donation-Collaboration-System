@@ -8,17 +8,15 @@ public class Users {
     private String firstname;
     private String lastname;
     private String email;
-    private String password;
     private String bloodgroup;
 
     public Users(){}
 
-    public Users (String firstname,String lastname,String email,String password,String bloodgroup)
+    public Users (String firstname,String lastname,String email,String bloodgroup)
     {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
-        this.password = password;
         this.bloodgroup = bloodgroup;
     }
 
@@ -44,14 +42,6 @@ public class Users {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getBloodgroup() {
