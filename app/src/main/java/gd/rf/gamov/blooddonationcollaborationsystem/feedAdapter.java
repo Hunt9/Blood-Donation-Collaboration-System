@@ -41,14 +41,14 @@ public class feedAdapter extends ArrayAdapter<UPosts> {
 
         UPosts postz = getItem(position);
 
-        UName.setText(postz.getName());
-        UnitofBloods.setText(postz.getUnits() +" of "+postz.getBloodgroups()+"required");
+        UName.setText("Hi, I'm "+postz.getName()+", I need ");
+        UnitofBloods.setText(postz.getUnits() +" Units of "+postz.getBloodgroups()+" Blood!");
         HospitalandRelations.setText("At "+postz.getHospital() +" for my "+postz.getRelation());
-        Time.setText("Urgency "+postz.getUrgent());
-        Contact.setText("Contact at : " + postz.getContact());
+        Time.setText(""+postz.getUrgent());
+        Contact.setText(""+postz.getContact());
         Addinfo.setText(postz.getInstructions());
-        Volunteer.setText("Volunteers Uptil Now : "+ "0");
-        CurrentReq.setText("Current Required : "+ "0");
+        Volunteer.setText("0");
+        CurrentReq.setText(postz.getUnits());
 
 
 

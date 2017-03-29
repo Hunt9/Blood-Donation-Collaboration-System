@@ -94,7 +94,7 @@ public class Feeds extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            getSupportFragmentManager().beginTransaction().add(R.id.MainFrame,new NewFeeds()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.MainFrame,new NewFeeds()).commit();
         } else if (id == R.id.nav_gallery) {
             getSupportFragmentManager().beginTransaction().replace(R.id.MainFrame,new MyRequests()).commit();
 
